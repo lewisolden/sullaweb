@@ -5,7 +5,7 @@ const courseModules = [
     sections: [
       {
         id: 1.1,
-        title: "Sample Section",
+        title: "Sample Section";
         content: "This is a sample content."
       }
     ]
