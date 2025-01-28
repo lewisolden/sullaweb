@@ -1,38 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { useProgress } from '../contexts/ProgressContext';
-
-// Mock data - in a real app, this would come from a more robust content management system
-const sectionContent = {
-  title: 'Introduction to Digital Currencies',
-  overview: 'Digital currencies represent a fundamental shift in how we conceive and use money. This section explores their revolutionary potential.',
-  keyPoints: [
-    {
-      title: 'What are Digital Currencies?',
-      description: 'Digital currencies are intangible money systems that exist electronically, leveraging technology to enable financial transactions.',
-      visualElement: 'A digital representation of money flowing through electronic circuits'
-    },
-    {
-      title: 'Decentralization',
-      description: 'Unlike traditional currencies, many digital currencies operate on decentralized networks, free from central bank control.',
-      visualElement: 'A network diagram showing distributed nodes instead of a central point'
-    },
-    {
-      title: 'Global Accessibility',
-      description: 'Digital currencies have the potential to provide financial services to billions of unbanked people worldwide.',
-      visualElement: 'A world map showing financial connectivity'
-    }
-  ],
-  challenges: [
-    'Volatile prices',
-    'Regulatory uncertainties',
-    'Technological complexity'
-  ]
-};
 
 const DigitalCurrenciesSection = () => {
-  const { updateProgress } = useProgress();
+  // Mock progress update function
+  const updateProgress = (moduleId, sectionId, completed) => {
+    // In a real implementation, this would update progress tracking
+    console.log(`Progress updated: Module ${moduleId}, Section ${sectionId}, Completed: ${completed}`);
+  };
+
   const [isFullyRead, setIsFullyRead] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Mock data - in a real app, this would come from a more robust content management system
+  const sectionContent = {
+    title: 'Introduction to Digital Currencies',
+    overview: 'Digital currencies represent a fundamental shift in how we conceive and use money. This section explores their revolutionary potential.',
+    keyPoints: [
+      {
+        title: 'What are Digital Currencies?',
+        description: 'Digital currencies are intangible money systems that exist electronically, leveraging technology to enable financial transactions.',
+        visualElement: 'A digital representation of money flowing through electronic circuits'
+      },
+      {
+        title: 'Decentralization',
+        description: 'Unlike traditional currencies, many digital currencies operate on decentralized networks, free from central bank control.',
+        visualElement: 'A network diagram showing distributed nodes instead of a central point'
+      },
+      {
+        title: 'Global Accessibility',
+        description: 'Digital currencies have the potential to provide financial services to billions of unbanked people worldwide.',
+        visualElement: 'A world map showing financial connectivity'
+      }
+    ],
+    challenges: [
+      'Volatile prices',
+      'Regulatory uncertainties',
+      'Technological complexity'
+    ]
+  };
 
   // Scroll progress tracking
   useEffect(() => {
@@ -51,7 +55,7 @@ const DigitalCurrenciesSection = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [updateProgress]);
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8">
