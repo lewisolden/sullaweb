@@ -1,3 +1,4 @@
+// Filename: src/components/Footer.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,9 +23,28 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Connect</h4>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-blue-200">Twitter</a>
-            <a href="#" className="hover:text-blue-200">LinkedIn</a>
-            <a href="#" className="hover:text-blue-200">Email</a>
+            <a 
+              href="https://twitter.com/sulla_crypto" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-blue-200"
+            >
+              Twitter
+            </a>
+            <a 
+              href="https://linkedin.com/company/sulla" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-blue-200"
+            >
+              LinkedIn
+            </a>
+            <a 
+              href="mailto:contact@sulla.com" 
+              className="hover:text-blue-200"
+            >
+              Email
+            </a>
           </div>
         </div>
       </div>
