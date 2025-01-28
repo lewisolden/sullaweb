@@ -9,7 +9,7 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "14.x"
+    "node": "22.x"  // Updated to Node.js 22.x
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -21,26 +21,4 @@
     "@jridgewell/sourcemap-codec": "^1.0.0",
     "@rollup/plugin-terser": "^1.0.0",
     "workbox-cacheable-response": "^6.5.0",
-    "workbox-background-sync": "^6.5.0",
-    "workbox-google-analytics": "^6.5.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-react-app": "^7.0.1"
-  },
-  "eslintConfig": {
-    "extends": ["react-app", "react-app/jest"]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
-}
+    "workbox-background-sync": "^6.
