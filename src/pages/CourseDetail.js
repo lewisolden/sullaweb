@@ -1,6 +1,6 @@
 // Filename: src/pages/CourseDetail.js
-import React from 'react'; // Import entire React module
-import { useState } from 'react'; // Separate import for useState
+import React from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import courseModules from '../data/courseModules';
 
@@ -15,10 +15,10 @@ const CourseDetail = () => {
   if (!module) return <div>Module not found</div>;
 
   const handleQuizAnswer = (questionId, selectedAnswer) => {
-    setQuizAnswers({
-      ...quizAnswers,
+    setQuizAnswers(prev => ({
+      ...prev,
       [questionId]: selectedAnswer
-    });
+    }));
   };
 
   const submitQuiz = () => {
