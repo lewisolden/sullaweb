@@ -3,40 +3,11 @@ import React, { useState, useEffect } from 'react';
 const DigitalCurrenciesSection = () => {
   // Mock progress update function
   const updateProgress = (moduleId, sectionId, completed) => {
-    // In a real implementation, this would update progress tracking
     console.log(`Progress updated: Module ${moduleId}, Section ${sectionId}, Completed: ${completed}`);
   };
 
   const [isFullyRead, setIsFullyRead] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Mock data - in a real app, this would come from a more robust content management system
-  const sectionContent = {
-    title: 'Introduction to Digital Currencies',
-    overview: 'Digital currencies represent a fundamental shift in how we conceive and use money. This section explores their revolutionary potential.',
-    keyPoints: [
-      {
-        title: 'What are Digital Currencies?',
-        description: 'Digital currencies are intangible money systems that exist electronically, leveraging technology to enable financial transactions.',
-        visualElement: 'A digital representation of money flowing through electronic circuits'
-      },
-      {
-        title: 'Decentralization',
-        description: 'Unlike traditional currencies, many digital currencies operate on decentralized networks, free from central bank control.',
-        visualElement: 'A network diagram showing distributed nodes instead of a central point'
-      },
-      {
-        title: 'Global Accessibility',
-        description: 'Digital currencies have the potential to provide financial services to billions of unbanked people worldwide.',
-        visualElement: 'A world map showing financial connectivity'
-      }
-    ],
-    challenges: [
-      'Volatile prices',
-      'Regulatory uncertainties',
-      'Technological complexity'
-    ]
-  };
 
   // Scroll progress tracking
   useEffect(() => {
@@ -69,43 +40,64 @@ const DigitalCurrenciesSection = () => {
 
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-blue-800 mb-6">
-          {sectionContent.title}
+          Introduction to Digital Currencies: The Dawn of a New Financial Era
         </h1>
 
-        <div className="bg-blue-50 rounded-lg p-6 mb-8">
-          <p className="text-xl text-gray-700">{sectionContent.overview}</p>
-        </div>
+        <div className="prose lg:prose-xl text-gray-700 space-y-6">
+          <p>
+            Imagine a world where you can send money to anyone, anywhere, at any time, without needing a bank. A world where you have complete control over your finances, free from government interference or corporate oversight. A world where the very nature of money itself is being redefined. This isn't science fiction—it's the world of digital currencies, and it's happening right now.
+          </p>
 
-        {/* Interactive Key Points */}
-        <div className="space-y-8 mb-12">
-          {sectionContent.keyPoints.map((point, index) => (
-            <div 
-              key={point.title} 
-              className="bg-white shadow-md rounded-lg p-6 transform transition-all hover:scale-105"
-            >
-              <h2 className="text-2xl font-semibold text-blue-700 mb-4">
-                {point.title}
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4 items-center">
-                <p className="text-gray-600">{point.description}</p>
-                <div className="bg-gray-100 rounded-lg p-4 text-center">
-                  {point.visualElement}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+          <h2 className="text-3xl font-bold text-blue-700 mt-8">The Digital Revolution of Money</h2>
+          
+          <p>
+            Just as the internet revolutionised information, digital currencies are transforming the very fabric of our financial systems. But what exactly are digital currencies? At their core, they're a new form of money designed for the digital age—intangible, yet as real and valuable as the cash in your wallet.
+          </p>
 
-        {/* Challenges Section */}
-        <div className="bg-red-50 rounded-lg p-6">
-          <h3 className="text-2xl font-bold text-red-800 mb-4">
-            Challenges in Digital Currencies
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            {sectionContent.challenges.map(challenge => (
-              <li key={challenge}>{challenge}</li>
-            ))}
+          <p>
+            Digital currencies come in various forms, from the cryptocurrencies that make headlines to the less-known virtual currencies used in online games. But it's cryptocurrencies like Bitcoin that have truly captured the world's imagination, promising a future where financial transactions are as easy as sending an email.
+          </p>
+
+          <h2 className="text-3xl font-bold text-blue-700 mt-8">More Than Just Money</h2>
+          
+          <p>
+            But digital currencies are about more than just a new way to pay for things. They represent a fundamental shift in how we think about money, value, and trust in the digital age.
+          </p>
+
+          <ul className="list-disc pl-5 space-y-3">
+            <li>
+              <strong>Decentralisation:</strong> Many digital currencies operate on decentralised networks, free from the control of any single entity. This means no central bank, no CEO, and no single point of failure.
+            </li>
+            <li>
+              <strong>Transparency:</strong> Transactions are often recorded on public ledgers, viewable by anyone. This level of transparency was unthinkable in traditional financial systems.
+            </li>
+            <li>
+              <strong>Programmable Money:</strong> Some digital currencies, like Ethereum, allow for "smart contracts"—self-executing agreements that can automate complex financial transactions.
+            </li>
+            <li>
+              <strong>Global Access:</strong> Digital currencies have the potential to provide financial services to the billions of people worldwide who don't have access to traditional banking.
+            </li>
           </ul>
+
+          <h2 className="text-3xl font-bold text-blue-700 mt-8">Challenges and Controversies</h2>
+          
+          <p>
+            Of course, this brave new world of digital currencies isn't without its challenges. Volatile prices, regulatory uncertainties, and concerns about illegal activities have all made headlines. Critics argue that cryptocurrencies are a bubble, a fad, or worse.
+          </p>
+
+          <p>
+            But supporters see these as growing pains of a technology that could be as transformative as the internet itself. They point to the underlying blockchain technology, which has applications far beyond just digital money.
+          </p>
+
+          <h2 className="text-3xl font-bold text-blue-700 mt-8">The Future is Digital</h2>
+          
+          <p>
+            Whether digital currencies will replace traditional money entirely is yet to be seen. But one thing is clear: they're already changing the way we think about finance, technology, and the nature of trust in the digital age.
+          </p>
+
+          <p>
+            As we embark on this journey to understand digital currencies, we'll explore their history, their underlying technology, and their potential to reshape our financial future. We'll separate fact from fiction, hype from reality, and explore both the promises and pitfalls of this revolutionary technology.
+          </p>
         </div>
 
         {/* Completion Indicator */}
