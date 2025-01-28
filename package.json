@@ -9,7 +9,7 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "22.x"  // Updated to Node.js 22.x
+    "node": "22.x"
   },
   "dependencies": {
     "react": "^18.2.0",
