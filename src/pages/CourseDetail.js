@@ -1,4 +1,5 @@
-import React, { useState } from 'react'; // Remove useEffect
+// Filename: src/pages/CourseDetail.js
+import React, { useState } from 'react'; // Explicitly only import useState
 import { useParams } from 'react-router-dom';
 import courseModules from '../data/courseModules';
 
