@@ -5,7 +5,7 @@ const CourseDetail = () => {
   const { moduleId } = useParams();
   const module = moduleId === 'module1' ? module1 : null;
   id: "module1",
-  title: "Fundamentals of Cryptocurrency";
+title: "Introduction to Cryptocurrency";
   description: "A comprehensive introduction to digital currencies, blockchain technology, and the revolutionary world of cryptocurrencies",
   introduction: `Welcome to the first module of our journey into the world of cryptocurrencies and blockchain technology. In this foundational module, we'll explore the basic concepts that underpin this revolutionary technology and set the stage for the more advanced topics we'll cover later in the course.
 
