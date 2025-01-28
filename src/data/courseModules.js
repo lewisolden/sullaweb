@@ -1,5 +1,2 @@
-import courseData from './courseModules.json';
-
-const courseModules = courseData.modules;
-
+const courseModules = [];
 export default courseModules;
