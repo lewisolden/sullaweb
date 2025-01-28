@@ -9,7 +9,8 @@ const quizzes = {
         "Reducing bank fees",
         "Creating online games"
       ],
-      correctAnswer: 1
+      correctAnswer: 1,
+      explanation: "Bitcoin was primarily designed to solve the double-spending problem in digital currencies, ensuring that a digital token cannot be spent more than once."
     },
     {
       id: 2,
@@ -20,10 +21,10 @@ const quizzes = {
         "They are decentralized and use blockchain technology",
         "They can only be used online"
       ],
-      correctAnswer: 2
+      correctAnswer: 2,
+      explanation: "Cryptocurrencies are unique because they use decentralized blockchain technology, which means they are not controlled by a single central authority like traditional banks."
     }
-  ],
-  // Additional module quizzes would be added here
+  ]
 };
 
 export default quizzes;
