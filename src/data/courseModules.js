@@ -1,3 +1,4 @@
+// Filename: src/data/courseModules.js
 const courseModules = [
   {
     id: "module1",
@@ -9,26 +10,7 @@ const courseModules = [
       "Bitcoin: The First Cryptocurrency"
     ]
   },
-  {
-    id: "module2",
-    title: "What is a Blockchain?",
-    description: "Deep dive into blockchain technology and its core principles",
-    chapters: [
-      "Blockchain Basics",
-      "Distributed Ledger Technology",
-      "Consensus Mechanisms"
-    ]
-  },
-  {
-    id: "module3",
-    title: "Blockchain Technology",
-    description: "Advanced exploration of blockchain systems and applications",
-    chapters: [
-      "Scalability and Interoperability",
-      "Types of Blockchains",
-      "Development Platforms"
-    ]
-  }
+  // ... other modules
 ];
 
 export default courseModules;
