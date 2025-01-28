@@ -1,5 +1,9 @@
-// src/data/courseModules.js
-const module1 = {
+// src/pages/CourseDetail.js
+import module1 from '../data/courseModules';
+
+const CourseDetail = () => {
+  const { moduleId } = useParams();
+  const module = moduleId === 'module1' ? module1 : null;
   id: "module1",
   title: "Fundamentals of Cryptocurrency",
   description: "A comprehensive introduction to digital currencies, blockchain technology, and the revolutionary world of cryptocurrencies",
