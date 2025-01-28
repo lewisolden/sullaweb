@@ -19,7 +19,7 @@
     "rimraf": "^4.0.0",
     "glob": "^9.0.0",
     "@jridgewell/sourcemap-codec": "^1.0.0",
-    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-terser": "^0.3.0",  // Update to a valid version
     "workbox-cacheable-response": "^6.5.0",
     "workbox-background-sync": "^6.5.0",
     "workbox-google-analytics": "^6.5.0"
