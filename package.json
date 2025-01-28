@@ -8,16 +8,19 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "rimraf": "^4.0.0", 
-    "glob": "^9.0.0",   
-    "@jridgewell/sourcemap-codec": "^1.0.0", 
+    "rimraf": "^4.0.0",
+    "glob": "^9.0.0",
+    "@jridgewell/sourcemap-codec": "^1.0.0",
     "@rollup/plugin-terser": "^1.0.0",
-    "workbox-cacheable-response": "^6.5.0",  
+    "workbox-cacheable-response": "^6.5.0",
     "workbox-background-sync": "^6.5.0",
     "workbox-google-analytics": "^6.5.0"
   },
