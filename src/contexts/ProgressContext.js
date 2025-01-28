@@ -1,10 +1,15 @@
-src/
-├── pages/
-│   └── module1/
-│       ├── Module1Overview.js
-│       ├── DigitalCurrenciesSection.js
-│       ├── Module1Quiz.js
-│       └── index.js
-├── contexts/
-│   └── ProgressContext.js
-└── App.js
+import React, { createContext, useState } from 'react';
+
+const ProgressContext = createContext();
+
+export const ProgressProvider = ({ children }) => {
+  const [progress, setProgress] = useState(0);
+
+  return (
+    <ProgressContext.Provider value={{ progress, setProgress }}>
+      {children}
+    </ProgressContext.Provider>
+  );
+};
+
+export default ProgressContext;
