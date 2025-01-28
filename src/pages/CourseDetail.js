@@ -25,4 +25,4 @@ const CourseDetail = () => {
   );
 };
 
-export default Courses;
+export default CourseDetail; // Corrected export
