@@ -7,7 +7,17 @@
         {
           "id": 1.1,
           "title": "Introduction to Digital Currencies",
-          "content": "This section covers the basics of digital currencies."
+          "content": "Digital currencies are a form of currency that exists primarily in electronic form. Unlike traditional currencies issued by governments, digital currencies leverage blockchain technology to provide secure, decentralized transactions."
+        },
+        {
+          "id": 1.2,
+          "title": "What is Blockchain?",
+          "content": "Blockchain is a distributed ledger technology that records transactions across many computers. Each block in the chain contains a number of transactions, and every time a new transaction occurs, a record of that transaction is added to every participant's ledger."
+        },
+        {
+          "id": 1.3,
+          "title": "Decentralization Explained",
+          "content": "Decentralization means that no single entity has control over the entire network. In the context of cryptocurrencies, this ensures that transactions are verified by multiple participants, making the system more transparent and resistant to manipulation."
         }
       ]
     }
