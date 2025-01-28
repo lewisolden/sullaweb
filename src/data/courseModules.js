@@ -1,5 +1,3 @@
-// src/data/courseModules.js
-
 const courseModules = [
   {
     id: 1,
@@ -79,6 +77,9 @@ const courseModules = [
       }
     ]
   }
+];
+
+export default courseModules;
 ];
 
 export default courseModules;
