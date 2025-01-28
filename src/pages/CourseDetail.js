@@ -32,7 +32,78 @@ const CourseDetail = () => {
     setQuizSubmitted(true);
   };
 
-  const isQuizComplete = module.quiz.length === Object.keys(quizAnswers).length;
+  const renderChapterContent = () => {
+    const chapter = module.chapters[activeChapter];
+    return (
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h1 className="text-3xl font-bold mb-6">{chapter.title}</h1>
+        <div className="prose max-w-none">
+          <p>{chapter.content}</p>
+        </div>
+      </div>
+    );
+  };
+
+  const renderQuizContent = () => {
+    if (quizSubmitted) {
+      return (
+        <div className="text-center">
+          <h3 className="text-2xl font-bold mb-4">Quiz Results</h3>
+          <p className="text-xl mb-4">Your Score: {quizScore}%</p>
+          <div className={`
+            p-4 rounded-lg 
+            ${quizScore >= 70 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}
+          `}>
+            {quizScore >= 70 
+              ? "Congratulations! You passed the module." 
+              : "Keep studying and try again."}
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="space-y-6">
+        {module.quiz.map((question) => (
+          <div 
+            key={question.id} 
+            className="bg-gray-100 p-4 rounded-lg"
+          >
+            <p className="text-lg font-semibold mb-4">{question.question}</p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {question.options.map((option, optionIndex) => (
+                <button
+                  key={optionIndex}
+                  onClick={() => handleQuizAnswer(question.id, optionIndex)}
+                  className={`
+                    px-4 py-2 rounded-lg text-left transition-all 
+                    ${quizAnswers[question.id] === optionIndex 
+                      ? 'bg-blue-600 text-white' 
+                      : 'bg-white hover:bg-blue-100 border'}
+                  `}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+        
+        <button
+          onClick={submitQuiz}
+          disabled={Object.keys(quizAnswers).length !== module.quiz.length}
+          className={`
+            w-full py-3 rounded-lg text-white font-bold transition-all
+            ${Object.keys(quizAnswers).length === module.quiz.length
+              ? 'bg-blue-600 hover:bg-blue-700'
+              : 'bg-gray-400 cursor-not-allowed'}
+          `}
+        >
+          Submit Quiz
+        </button>
+      </div>
+    );
+  };
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -56,79 +127,13 @@ const CourseDetail = () => {
         </div>
 
         {/* Chapter Content */}
-        <div className="md:col-span-3">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h1 className="text-3xl font-bold mb-6">
-              {module.chapters[activeChapter].title}
-            </h1>
-            <div className="prose max-w-none">
-              <p>{module.chapters[activeChapter].content}</p>
-            </div>
-          </div>
+        <div className="md:col-span-3 space-y-8">
+          {renderChapterContent()}
 
           {/* Quiz Section */}
-          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6">Module Quiz</h2>
-            {!quizSubmitted ? (
-              <div className="space-y-6">
-                {module.quiz.map((question) => (
-                  <div 
-                    key={question.id} 
-                    className={`bg-gray-100 p-4 rounded-lg ${
-                      quizAnswers[question.id] !== undefined 
-                        ? 'border-2 border-blue-500' 
-                        : 'border border-gray-200'
-                    }`}
-                  >
-                    <p className="text-lg font-semibold mb-4">{question.question}</p>
-                    <div className="grid md:grid-cols-2 gap-3">
-                      {question.options.map((option, optionIndex) => (
-                        <button
-                          key={optionIndex}
-                          onClick={() => handleQuizAnswer(question.id, optionIndex)}
-                          className={`
-                            px-4 py-2 rounded-lg text-left transition-all 
-                            ${quizAnswers[question.id] === optionIndex 
-                              ? 'bg-blue-600 text-white' 
-                              : 'bg-white hover:bg-blue-100 border'}
-                          `}
-                        >
-                          {option}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                
-                <button
-                  onClick={submitQuiz}
-                  disabled={!isQuizComplete}
-                  className={`
-                    w-full py-3 rounded-lg text-white font-bold transition-all
-                    ${isQuizComplete
-                      ? 'bg-blue-600 hover:bg-blue-700'
-                      : 'bg-gray-400 cursor-not-allowed'}
-                  `}
-                >
-                  Submit Quiz
-                </button>
-              </div>
-            ) : (
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">Quiz Results</h3>
-                <p className="text-xl mb-4">
-                  Your Score: {quizScore}%
-                </p>
-                <div className={`
-                  p-4 rounded-lg 
-                  ${quizScore >= 70 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}
-                `}>
-                  {quizScore >= 70 
-                    ? "Congratulations! You passed the module." 
-                    : "Keep studying and try again."}
-                </div>
-              </div>
-            )}
+            {renderQuizContent()}
           </div>
         </div>
       </div>
