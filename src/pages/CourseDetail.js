@@ -1,5 +1,6 @@
 // Filename: src/pages/CourseDetail.js
-import React, { useState } from 'react'; // Explicitly only import useState
+import React from 'react'; // Import entire React module
+import { useState } from 'react'; // Separate import for useState
 import { useParams } from 'react-router-dom';
 import courseModules from '../data/courseModules';
 
