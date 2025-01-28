@@ -1,20 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
 import Home from './pages/Home';
-import Module1Routes from './pages/module1';
-// Other imports
+import Module1 from './pages/Module1'; // Create this file
+import Module2 from './pages/Module2'; // Create this file
+import Module3 from './pages/Module3'; // Create this file
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/module1/*" element={<Module1Routes />} />
-          {/* Other routes */}
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses/1" element={<Module1 />} />
+        <Route path="/courses/2" element={<Module2 />} />
+        <Route path="/courses/3" element={<Module3 />} />
+      </Routes>
     </Router>
   );
 }
