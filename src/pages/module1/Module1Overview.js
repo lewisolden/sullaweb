@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useProgress } from '../contexts/ProgressContext';
 
 const Module1Overview = () => {
-  const { getModuleCompletionPercentage } = useProgress();
-  const moduleCompletion = getModuleCompletionPercentage(1);
+  // Mock progress tracking (would typically come from a context or global state)
+  const getModuleCompletionPercentage = () => {
+    // In a real implementation, this would track actual progress
+    return 0; // Starting at 0% completion
+  };
+  const moduleCompletion = getModuleCompletionPercentage();
 
   const sections = [
     {
@@ -71,12 +73,15 @@ const Module1Overview = () => {
             <div className="text-5xl mb-4">{section.icon}</div>
             <h2 className="text-xl font-bold mb-3 text-blue-800">{section.title}</h2>
             <p className="text-gray-600 mb-4">{section.description}</p>
-            <Link
-              to={`/module1/${section.id}`}
+            <button
+              onClick={() => {
+                // In a real app, this would use routing or navigation
+                console.log(`Navigate to ${section.id}`);
+              }}
               className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             >
               Start Section
-            </Link>
+            </button>
           </div>
         ))}
       </div>
