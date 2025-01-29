@@ -114,6 +114,64 @@ const Modules = () => {
                           clipRule="evenodd" 
                         />
                       </svg>
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-6 border-t border-blue-100 pt-6">
+              <Link 
+                to={`/modules/module${module.id}`} 
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
+              >
+                Start Module {module.id}
+              </Link>
+            </div>
+          </div>
+        ))}
+
+        <div className="text-center mt-12 bg-white shadow-lg rounded-lg p-8">
+          <h2 className="text-2xl font-semibold text-blue-800 mb-6">
+            Your Learning Journey Starts Here
+          </h2>
+          <p className="text-blue-700 mb-6 max-w-2xl mx-auto">
+            Our carefully crafted modules are designed to take you from a beginner 
+            to an advanced learner in cryptocurrency and blockchain technology. 
+            Each module builds upon the last, creating a comprehensive learning path.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Link 
+              to="/curriculum" 
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+              View Full Curriculum
+            </Link>
+            <Link 
+              to="/interactive-learning" 
+              className="bg-white text-blue-600 px-6 py-3 rounded-lg border border-blue-600 hover:bg-blue-50 transition duration-300"
+            >
+              Learn About Our Technology
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Modules;
+text-blue-500 mr-2" 
+                        fill="currentColor" 
+                        viewBox="0 0 20 20"
+                      >
+                        <path 
+                          fillRule="evenodd" 
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" 
+                          clipRule="evenodd" 
+                        />
+                      </svg>
                       {section}
                     </li>
                   ))}
