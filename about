@@ -1,0 +1,100 @@
+import React from 'react';
+
+const About = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 py-16">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <h1 className="text-4xl font-bold text-blue-900 mb-8 text-center">
+          About Sulla: Democratizing Blockchain Education
+        </h1>
+
+        <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-blue-800 mb-4">
+            Our Mission
+          </h2>
+          <p className="text-blue-700 mb-4">
+            Sulla was born from a fundamental belief: understanding blockchain and cryptocurrency 
+            should be accessible to everyone, not just technical experts or financial professionals. 
+            Our platform bridges the knowledge gap, providing clear, comprehensive, and engaging 
+            educational content that demystifies complex technological concepts.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-blue-800 mb-4">
+            Platform Technology
+          </h2>
+          <div className="space-y-4 text-blue-700">
+            <p>
+              Built using cutting-edge web technologies, Sulla leverages a robust tech stack 
+              to deliver an interactive and adaptive learning experience:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Frontend:</strong> React.js with Tailwind CSS for responsive, 
+                modern user interfaces
+              </li>
+              <li>
+                <strong>State Management:</strong> Redux for consistent and predictable 
+                application state
+              </li>
+              <li>
+                <strong>Routing:</strong> React Router for seamless navigation
+              </li>
+              <li>
+                <strong>AI Integration:</strong> Planned machine learning algorithms to 
+                create personalized learning paths
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-blue-800 mb-4">
+            Adaptive Learning Technology
+          </h2>
+          <div className="text-blue-700 space-y-4">
+            <p>
+              Our platform goes beyond traditional online learning by implementing 
+              sophisticated adaptive learning features:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Personalized Content Recommendation:</strong> AI-driven algorithms 
+                analyze your learning progress and suggest targeted content
+              </li>
+              <li>
+                <strong>Dynamic Difficulty Adjustment:</strong> Quiz and learning module 
+                difficulty adapts based on your performance
+              </li>
+              <li>
+                <strong>Progress Tracking:</strong> Comprehensive analytics help you 
+                understand your learning journey
+              </li>
+              <li>
+                <strong>Interactive Learning Paths:</strong> Customized learning 
+                trajectories based on your goals and prior knowledge
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-lg p-8">
+          <h2 className="text-2xl font-semibold text-blue-800 mb-4">
+            Our Commitment
+          </h2>
+          <p className="text-blue-700">
+            At Sulla, we're more than an educational platform. We're a community 
+            dedicated to empowering individuals with the knowledge to understand 
+            and participate in the blockchain revolution. Whether you're a 
+            complete beginner or looking to deepen your existing knowledge, 
+            Sulla provides the resources you need to navigate the exciting world 
+            of cryptocurrencies and blockchain technology.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default About;
