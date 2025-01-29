@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpenIcon, AcademicCapIcon, LightningBoltIcon } from '@heroicons/react/outline';
+import { BookOpen, GraduationCap, Zap } from 'react-feather'; // Using react-feather icons instead of heroicons
 
 const Home = () => {
   return (
@@ -38,53 +38,42 @@ const Home = () => {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-              <BookOpenIcon className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">
-                Module 1: Fundamentals of Cryptocurrency
-              </h3>
-              <p className="text-blue-700 mb-4">
-                Dive into the world of digital currencies, exploring their history, technology, and potential.
-              </p>
-              <Link 
-                to="/modules/module1" 
-                className="text-blue-600 hover:text-blue-800 font-medium"
-              >
-                Explore Module →
-              </Link>
-            </div>
-
-            <div className="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-              <AcademicCapIcon className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">
-                Module 2: What is a Blockchain?
-              </h3>
-              <p className="text-blue-700 mb-4">
-                Understand the core technology behind cryptocurrencies and its revolutionary potential.
-              </p>
-              <Link 
-                to="/modules/module2" 
-                className="text-blue-600 hover:text-blue-800 font-medium"
-              >
-                Explore Module →
-              </Link>
-            </div>
-
-            <div className="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-              <LightningBoltIcon className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">
-                Module 3: Blockchain Technology
-              </h3>
-              <p className="text-blue-700 mb-4">
-                Explore advanced blockchain concepts, platforms, and real-world applications.
-              </p>
-              <Link 
-                to="/modules/module3" 
-                className="text-blue-600 hover:text-blue-800 font-medium"
-              >
-                Explore Module →
-              </Link>
-            </div>
+            {[
+              { 
+                icon: BookOpen, 
+                title: "Module 1: Fundamentals of Cryptocurrency",
+                description: "Dive into the world of digital currencies, exploring their history, technology, and potential.",
+                link: "/modules/module1"
+              },
+              {
+                icon: GraduationCap,
+                title: "Module 2: What is a Blockchain?",
+                description: "Understand the core technology behind cryptocurrencies and its revolutionary potential.",
+                link: "/modules/module2"
+              },
+              {
+                icon: Zap,
+                title: "Module 3: Blockchain Technology",
+                description: "Explore advanced blockchain concepts, platforms, and real-world applications.",
+                link: "/modules/module3"
+              }
+            ].map((module, index) => (
+              <div key={index} className="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <module.icon className="h-12 w-12 text-blue-600 mb-4" />
+                <h3 className="text-xl font-semibold text-blue-800 mb-4">
+                  {module.title}
+                </h3>
+                <p className="text-blue-700 mb-4">
+                  {module.description}
+                </p>
+                <Link 
+                  to={module.link}
+                  className="text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Explore Module →
+                </Link>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
