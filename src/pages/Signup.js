@@ -122,3 +122,21 @@ const Signup = () => {
           </div>
 
           <div className="text-center
+               <div className="text-center mt-4">
+            <p className="text-blue-700">
+              Already have an account?{' '}
+              <Link 
+                to="/login" 
+                className="text-blue-600 hover:text-blue-800 font-semibold"
+              >
+                Log In
+              </Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Signup;
