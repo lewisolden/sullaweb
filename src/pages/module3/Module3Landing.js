@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Module3Landing = () => {
+  // Navigation handler function - implement based on your app's navigation system
+  const handleNavigation = (path) => {
+    console.log(`Navigating to: ${path}`);
+    // Implement your navigation logic here
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
@@ -59,12 +64,12 @@ const Module3Landing = () => {
                 Explore the challenges of scaling blockchain networks and solutions for 
                 interoperability between different blockchain systems.
               </p>
-              <Link 
-                to="/module3/scalability" 
+              <button 
+                onClick={() => handleNavigation('/module3/scalability')}
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 Start Section →
-              </Link>
+              </button>
             </div>
 
             <div className="bg-blue-50 p-6 rounded-lg">
@@ -75,12 +80,12 @@ const Module3Landing = () => {
                 Learn about different types of blockchain networks including public, 
                 private, and consortium blockchains.
               </p>
-              <Link 
-                to="/module3/types" 
+              <button 
+                onClick={() => handleNavigation('/module3/types')}
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 Start Section →
-              </Link>
+              </button>
             </div>
 
             <div className="bg-blue-50 p-6 rounded-lg">
@@ -91,23 +96,23 @@ const Module3Landing = () => {
                 Discover major blockchain platforms like Ethereum, Solana, and others, 
                 understanding their unique features and capabilities.
               </p>
-              <Link 
-                to="/module3/platforms" 
+              <button 
+                onClick={() => handleNavigation('/module3/platforms')}
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 Start Section →
-              </Link>
+              </button>
             </div>
           </div>
         </div>
 
         <div className="mt-8 text-center">
-          <Link 
-            to="/module3/scalability" 
+          <button 
+            onClick={() => handleNavigation('/module3/scalability')}
             className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 inline-block"
           >
             Begin Module 3
-          </Link>
+          </button>
         </div>
       </div>
     </div>
