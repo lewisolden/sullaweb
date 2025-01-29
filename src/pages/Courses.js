@@ -2,44 +2,57 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Courses = () => {
-    return (
-        <div className="min-h-screen bg-gray-100 p-6">
-            <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Explore Our Modules</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Module 1 */}
-                <div className="p-4 bg-white shadow-lg rounded-lg">
-                    <h2 className="text-xl font-semibold text-gray-800 mb-2">Module 1: Introduction to Cryptocurrency</h2>
-                    <p className="text-gray-600 mb-4">Learn the basics of cryptocurrency, its history, and how it works.</p>
-                    <Link 
-                        to="/module1" 
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                        Start Module 1
-                    </Link>
-                </div>
+  const modules = [
+    { 
+      id: 1, 
+      title: 'Fundamentals of Cryptocurrency', 
+      description: 'Learn the basics of digital currencies, their history, and core concepts.',
+      difficulty: 'Beginner'
+    },
+    { 
+      id: 2, 
+      title: 'What is a Blockchain?', 
+      description: 'Deep dive into blockchain technology, its structure, and fundamental principles.',
+      difficulty: 'Beginner to Intermediate'
+    },
+    { 
+      id: 3, 
+      title: 'Blockchain Technology', 
+      description: 'Advanced exploration of blockchain development, applications, and future trends.',
+      difficulty: 'Intermediate to Advanced'
+    }
+  ];
 
-                {/* Module 2 */}
-                <div className="p-4 bg-white shadow-lg rounded-lg">
-                    <h2 className="text-xl font-semibold text-gray-800 mb-2">Module 2: Blockchain Technology</h2>
-                    <p className="text-gray-600 mb-4">Dive into blockchain technology, consensus mechanisms, and smart contracts.</p>
-                    <Link 
-                        to="/module2" 
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                        Start Module 2
-                    </Link>
-                </div>
-
-                {/* Placeholder for Module 3 */}
-                <div className="p-4 bg-white shadow-lg rounded-lg">
-                    <h2 className="text-xl font-semibold text-gray-800 mb-2">Module 3: Coming Soon</h2>
-                    <p className="text-gray-600 mb-4">Stay tuned for more exciting content in our upcoming module.</p>
-                    <button 
-                        className="px-4 py-2 bg-gray-400 text-white rounded-lg cursor-not-allowed">
-                        Coming Soon
-                    </button>
-                </div>
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-8 text-blue-700">Sulla Courses</h1>
+      
+      <div className="grid md:grid-cols-3 gap-6">
+        {modules.map((module) => (
+          <div 
+            key={module.id} 
+            className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <h2 className="text-2xl font-bold mb-3 text-blue-600">
+              Module {module.id}: {module.title}
+            </h2>
+            <p className="text-gray-600 mb-4">{module.description}</p>
+            <div className="flex justify-between items-center">
+              <span className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded">
+                {module.difficulty}
+              </span>
+              <Link 
+                to={`/courses/${module.id}`} 
+                className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              >
+                Start Course
+              </Link>
             </div>
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Courses;
