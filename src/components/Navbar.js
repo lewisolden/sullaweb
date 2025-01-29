@@ -5,15 +5,22 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-600 text-white">
+    <nav className="bg-blue-600 text-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">Sulla</Link>
+        <Link to="/" className="text-2xl font-bold flex items-center">
+          <img 
+            src="/sulla-logo.png" 
+            alt="Sulla Logo" 
+            className="h-8 mr-2"
+          />
+          Sulla
+        </Link>
         
-        {/* Mobile and Desktop Menu Logic */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="mobile-menu-button"
+            className="focus:outline-none"
           >
             <svg 
               className="w-6 h-6" 
@@ -35,34 +42,60 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-4">
-          <Link to="/" className="hover:text-blue-200">Home</Link>
-          <Link to="/courses" className="hover:text-blue-200">Courses</Link>
-          <Link to="/about" className="hover:text-blue-200">About</Link>
+        <div className="hidden md:flex space-x-6">
+          <Link to="/" className="hover:text-blue-200 transition duration-300">
+            Home
+          </Link>
+          <Link to="/modules" className="hover:text-blue-200 transition duration-300">
+            Modules
+          </Link>
+          <Link to="/curriculum" className="hover:text-blue-200 transition duration-300">
+            Curriculum
+          </Link>
+          <Link to="/interactive-learning" className="hover:text-blue-200 transition duration-300">
+            Learning Tech
+          </Link>
+          <Link to="/about" className="hover:text-blue-200 transition duration-300">
+            About
+          </Link>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-4 pt-2 pb-3 space-y-1 bg-blue-700">
             <Link 
               to="/" 
-              className="text-white block hover:bg-blue-700 px-3 py-2 rounded-md"
+              className="block hover:bg-blue-600 px-3 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link 
-              to="/courses" 
-              className="text-white block hover:bg-blue-700 px-3 py-2 rounded-md"
+              to="/modules" 
+              className="block hover:bg-blue-600 px-3 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
-              Courses
+              Modules
+            </Link>
+            <Link 
+              to="/curriculum" 
+              className="block hover:bg-blue-600 px-3 py-2 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Curriculum
+            </Link>
+            <Link 
+              to="/interactive-learning" 
+              className="block hover:bg-blue-600 px-3 py-2 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Learning Tech
             </Link>
             <Link 
               to="/about" 
-              className="text-white block hover:bg-blue-700 px-3 py-2 rounded-md"
+              className="block hover:bg-blue-600 px-3 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               About
