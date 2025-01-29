@@ -6,6 +6,7 @@ import About from './pages/About';
 import InteractiveLearning from './pages/InteractiveLearning';
 import Curriculum from './pages/Curriculum';
 import Modules from './pages/Modules';
+import ProgressDashboard from './components/ProgressDashboard';
 
 // Module Landing and Section Imports
 import Module1Landing from './pages/Module1Landing';
@@ -20,6 +21,17 @@ import AltcoinsAndTokensSection from './pages/AltcoinsAndTokensSection';
 import CryptoMarketDynamicsSection from './pages/CryptoMarketDynamicsSection';
 import CryptographySection from './pages/CryptographySection';
 
+// Module 2 Specific Imports
+import BlockchainBasicsSection from './pages/BlockchainBasicsSection';
+import DistributedLedgerSection from './pages/DistributedLedgerSection';
+import ConsensusMechanismsSection from './pages/ConsensusMechanismsSection';
+import SmartContractsSection from './pages/SmartContractsSection';
+
+// Module 3 Specific Imports
+import BlockchainScalabilitySection from './pages/BlockchainScalabilitySection';
+import BlockchainTypesSection from './pages/BlockchainTypesSection';
+import BlockchainPlatformsSection from './pages/BlockchainPlatformsSection';
+
 // Module 1 Quizzes
 import Module1Quiz from './pages/Module1Quiz';
 import DigitalCurrenciesQuiz from './pages/DigitalCurrenciesQuiz';
@@ -28,6 +40,17 @@ import BitcoinQuiz from './pages/BitcoinQuiz';
 import AltcoinsAndTokensQuiz from './pages/AltcoinsAndTokensQuiz';
 import CryptoMarketDynamicsQuiz from './pages/CryptoMarketDynamicsQuiz';
 import CryptographyQuiz from './pages/CryptographyQuiz';
+
+// Module 2 Quizzes
+import BlockchainBasicsQuiz from './pages/BlockchainBasicsQuiz';
+import DistributedLedgerQuiz from './pages/DistributedLedgerQuiz';
+import ConsensusMechanismsQuiz from './pages/ConsensusMechanismsQuiz';
+import SmartContractsQuiz from './pages/SmartContractsQuiz';
+
+// Module 3 Quizzes
+import BlockchainScalabilityQuiz from './pages/BlockchainScalabilityQuiz';
+import BlockchainTypesQuiz from './pages/BlockchainTypesQuiz';
+import BlockchainPlatformsQuiz from './pages/BlockchainPlatformsQuiz';
 
 function App() {
   return (
@@ -40,6 +63,7 @@ function App() {
           <Route path="/interactive-learning" element={<InteractiveLearning />} />
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/modules" element={<Modules />} />
+          <Route path="/progress" element={<ProgressDashboard />} />
 
           {/* Module Landing Pages */}
           <Route path="/modules/module1" element={<Module1Landing />} />
@@ -54,6 +78,17 @@ function App() {
           <Route path="/module1/market-dynamics" element={<CryptoMarketDynamicsSection />} />
           <Route path="/module1/cryptography" element={<CryptographySection />} />
 
+          {/* Module 2 Sections */}
+          <Route path="/module2/blockchain-basics" element={<BlockchainBasicsSection />} />
+          <Route path="/module2/distributed-ledger" element={<DistributedLedgerSection />} />
+          <Route path="/module2/consensus-mechanisms" element={<ConsensusMechanismsSection />} />
+          <Route path="/module2/smart-contracts" element={<SmartContractsSection />} />
+
+          {/* Module 3 Sections */}
+          <Route path="/module3/scalability" element={<BlockchainScalabilitySection />} />
+          <Route path="/module3/blockchain-types" element={<BlockchainTypesSection />} />
+          <Route path="/module3/blockchain-platforms" element={<BlockchainPlatformsSection />} />
+
           {/* Module 1 Quizzes */}
           <Route path="/module1/quiz" element={<Module1Quiz />} />
           <Route path="/module1/digital-currencies-quiz" element={<DigitalCurrenciesQuiz />} />
@@ -62,6 +97,17 @@ function App() {
           <Route path="/module1/altcoins-quiz" element={<AltcoinsAndTokensQuiz />} />
           <Route path="/module1/market-dynamics-quiz" element={<CryptoMarketDynamicsQuiz />} />
           <Route path="/module1/cryptography-quiz" element={<CryptographyQuiz />} />
+
+          {/* Module 2 Quizzes */}
+          <Route path="/module2/blockchain-basics-quiz" element={<BlockchainBasicsQuiz />} />
+          <Route path="/module2/distributed-ledger-quiz" element={<DistributedLedgerQuiz />} />
+          <Route path="/module2/consensus-mechanisms-quiz" element={<ConsensusMechanismsQuiz />} />
+          <Route path="/module2/smart-contracts-quiz" element={<SmartContractsQuiz />} />
+
+          {/* Module 3 Quizzes */}
+          <Route path="/module3/scalability-quiz" element={<BlockchainScalabilityQuiz />} />
+          <Route path="/module3/blockchain-types-quiz" element={<BlockchainTypesQuiz />} />
+          <Route path="/module3/blockchain-platforms-quiz" element={<BlockchainPlatformsQuiz />} />
         </Routes>
       </Layout>
     </Router>
