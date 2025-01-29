@@ -5,12 +5,12 @@ import { useAuth } from '../contexts/AuthContext';
 const ProtectedRoute = ({ children }) => {
   const { currentUser } = useAuth();
 
-  if (!currentUser) {
-    // Redirect to login if no user is logged in
-    return <Navigate to="/login" replace />;
+  // Show loading state while checking authentication
+  if (currentUser === undefined) {
+    return <div>Loading...</div>; // Replace with a better UI loader if needed
   }
 
-  return children;
+  return currentUser ? children : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;
