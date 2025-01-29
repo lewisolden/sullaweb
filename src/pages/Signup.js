@@ -121,8 +121,7 @@ const Signup = () => {
             </button>
           </div>
 
-          <div className="text-center
-               <div className="text-center mt-4">
+          <div className="text-center mt-4">
             <p className="text-blue-700">
               Already have an account?{' '}
               <Link 
